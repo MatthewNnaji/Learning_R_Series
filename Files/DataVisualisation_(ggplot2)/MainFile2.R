@@ -1,4 +1,5 @@
 # ggplot2｜Data Vis. with R ################################################################
+"STRONGLY Recommend opening this in Rstudio! There is an alternate jupyter notebook version, 'VisNotebook' available."
 
 ## Libraries and Init =================================================================
 library(tidyverse)
@@ -20,7 +21,9 @@ library(readxl)
 
 ## Tasks ===========================================================================
 #~・—・~・—・~・—・~・—・~・—・~・—・~・—・~・—・~・—・~・—・~・—・~・—・~・—・~・—・~・—・
-# [1] 
+# [1] first visualisation, point geometry, lines and smoothers,  geom_bar and geom_column
+# [5] histograms, box-and-whisker diagrams, backgrounds, axes, using scales (e.g. scale_x_continuous)
+# [10] Key/legend, Annotations, Titles, Themes (brewer & viridis), Faceting, secondary axis
 #~・—・~・—・~・—・~・—・~・—・~・—・~・—・~・—・~・—・~・—・~・—・~・—・~・—・~・—・~・—・
 
 
@@ -89,7 +92,7 @@ ggplot(data=college) +
   geom_bar(mapping=aes(x=region,colour=control)) #for bar aesthetic, colour=outline
 
 ggplot(data=college) +
-  geom_bar(mapping=aes(x=region,fill=control)) #for bar aesthetic, colour=outline
+  geom_bar(mapping=aes(x=region,fill=control)) #for bar aesthetic, fill=bar colouring in
 
 #geom_col() is literally the same; except you manually set y
 #we will quickly use dplyr to extract a statistic (average tuition); then map that
@@ -234,7 +237,7 @@ colnames(college)
 #scale_x_continous | continous variable on the x axis
 #scale_fill_discrete | discrete variable on the 'fill' axis/scale 
 'Using Plot4 again; we can change label names using scale'
-
+m
 Plot5 <- Plot4 +
   scale_x_discrete(name='Region')+
   scale_y_continuous(name='Number of schools',limits=c(0,500))+
